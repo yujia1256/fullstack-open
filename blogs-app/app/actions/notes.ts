@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation"
 import { addBlog } from "../services/blogs"
 import { revalidatePath } from "next/cache"
+import { updateLikes } from "../services/blogs"
 
 export const createBlog = async (forDate: FormData) => {
     const title = forDate.get("title") as string
@@ -13,4 +14,10 @@ export const createBlog = async (forDate: FormData) => {
     revalidatePath("/blogs")
     redirect("/blogs")
     //这里的刷新缓冲，一定要写在重定向之前
+}
+export const handleLilk = async (FormData: FormData) => {
+    const id = Number(FormData.get("id"))
+    updateLikes(id)
+    revalidatePath("/blogs")
+    revalidatePath("/blogs/${id}")
 }
