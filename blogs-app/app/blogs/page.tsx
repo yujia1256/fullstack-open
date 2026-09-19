@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { getBlogs } from "../services/blogs"
 
 const Blogs = () => {
@@ -7,16 +8,19 @@ const Blogs = () => {
       <h2>blogs</h2>
       <ul>
         {blogs.map(blog => (
+          
           <li key={blog.id}>
-            {blog.id}.<strong>{blog.title}</strong><br />
-               auther:{blog.author}  |     
-                 url:
+            
+              {blog.id}.<br />
+              <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
+                auther:{blog.author}  |     
+              url:
                <a href={blog.url}>
-              {blog.url}
+               {blog.url}
                </a>
 
-          (Likes:{blog.likes})
-            
+              (Likes:{blog.likes})
+           
           </li>
         ))}
       </ul>
