@@ -3,7 +3,7 @@ const blogs = [
   title: "next.js utilizes React Server Components",
   author:"Zhangjidong",
   url:"https://courses.mooc.fi/org/uh-cs/courses/full-stack-open-nextjs",
-  likes: 5,},
+  likes: 7,},
  { id: 2,
   title: "next.js utilizes React Server Components",
   author:"Zhangjidong",

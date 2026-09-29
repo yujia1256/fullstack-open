@@ -3,15 +3,16 @@ import { getBlogs } from "../services/blogs"
 
 const Blogs = () => {
   const blogs = getBlogs() //const用来声明一个常量
+  const blogsToShow = [...blogs].sort((a, b) => b.likes - a.likes)
   return (
     <div>
       <h2>blogs</h2>
       <ul>
-        {blogs.map(blog => (
+        {blogsToShow.map(blog => (
           
           <li key={blog.id}>
             
-              {blog.id}.<br />
+             
               <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
                 auther:{blog.author}  |     
               url:

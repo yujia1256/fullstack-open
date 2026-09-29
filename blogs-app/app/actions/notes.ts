@@ -19,5 +19,5 @@ export const handleLilk = async (FormData: FormData) => {
     const id = Number(FormData.get("id"))
     updateLikes(id)
     revalidatePath("/blogs")
-    revalidatePath("/blogs/${id}")
+    revalidatePath(`/blogs/${id}`)
 }
