@@ -5,7 +5,7 @@ import { handleLilk } from "@/app/actions/notes"
 const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
   console.log("当前获取到路由是id")
-  const blog = getBlogById(Number(id))
+  const blog =await getBlogById(Number(id))
 
   if (!blog) {
     notFound()

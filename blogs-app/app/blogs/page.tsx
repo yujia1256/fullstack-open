@@ -8,8 +8,8 @@ const Blogs = async ({
 }) => {
   const { filter } = await searchParams
   const term = typeof filter === "string" ? filter.trim() : ""
-  const blogs = getBlogs() //const用来声明一个常量
-  const blogsToShow = [...blogs]
+  const blogs = await getBlogs()
+  const blogsToShow = await [...blogs]
     .filter(
       (blog) =>
         term === "" || blog.title.toLowerCase().includes(term.toLowerCase())
