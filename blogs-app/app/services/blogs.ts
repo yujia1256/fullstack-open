@@ -16,7 +16,7 @@ export const updateLikes = async (id: number) => {
 
 }
 export const addBlog = async(title: string, author: string,url:string,likes:number) => {
-  return db.insert(blogs).values({ title, author, url, likes })
+  return db.insert(blogs).values({ title, author, url, likes,userId: 1 })
 }
 export const getBlogById = async(id: number) => {
   return db.query.blogs.findFirst({
